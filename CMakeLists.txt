@@ -1,10 +1,16 @@
 cmake_minimum_required(VERSION 3.16)
-project(BUILDABOT_PROJECT_NAME)
-message(FATAL_ERROR "Please run buildabot.sh")
+project(Hexagrid-Master)
 
 set(CMAKE_CXX_STANDARD 17)
 
-#BUILDABOT_SUBDIR
+add_subdirectory(lib/discordpp)
+add_subdirectory(lib/websocket-simpleweb)
+add_subdirectory(lib/rest-simpleweb)
+add_subdirectory(lib/plugin-ratelimit)
+add_subdirectory(lib/plugin-endpoints)
+add_subdirectory(lib/plugin-objects)
+add_subdirectory(lib/plugin-overload)
+add_subdirectory(lib/plugin-interactionhandler)
 
 list(JOIN ALL_DISCORDPP_PLUGINS , ALL_DISCORDPP_PLUGINS_JOINED)
 add_compile_definitions(ALL_DISCORDPP_PLUGINS=${ALL_DISCORDPP_PLUGINS_JOINED})

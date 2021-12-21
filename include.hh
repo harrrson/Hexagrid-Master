@@ -20,7 +20,6 @@
 
 #endif
 
-BUILDABOT_INCLUDE
 
 // Put more D++ plugin `include`s here
 

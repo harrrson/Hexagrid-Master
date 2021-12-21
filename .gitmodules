@@ -1,0 +1,32 @@
+[submodule "discordpp"]
+	path = lib/discordpp
+	url = https://github.com/DiscordPP/discordpp.git
+	branch = master
+[submodule "websocket-simpleweb"]
+	path = lib/websocket-simpleweb
+	url = https://github.com/DiscordPP/websocket-simpleweb.git
+	branch = master
+[submodule "rest-simpleweb"]
+	path = lib/rest-simpleweb
+	url = https://github.com/DiscordPP/rest-simpleweb.git
+	branch = master
+[submodule "plugin-ratelimit"]
+	path = lib/plugin-ratelimit
+	url = https://github.com/DiscordPP/plugin-ratelimit.git
+	branch = master
+[submodule "plugin-endpoints"]
+	path = lib/plugin-endpoints
+	url = https://github.com/DiscordPP/plugin-endpoints.git
+	branch = master
+[submodule "plugin-objects"]
+	path = lib/plugin-objects
+	url = https://github.com/DiscordPP/plugin-objects.git
+	branch = master
+[submodule "plugin-overload"]
+	path = lib/plugin-overload
+	url = https://github.com/DiscordPP/plugin-overload.git
+	branch = master
+[submodule "plugin-interactionhandler"]
+	path = lib/plugin-interactionhandler
+	url = https://github.com/DiscordPP/plugin-interactionhandler.git
+	branch = master

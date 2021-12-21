@@ -7,12 +7,12 @@ RUN apt update && apt install -y \
     build-essential \
     libssl-dev \
 && rm -rf /var/lib/apt/lists/*
-WORKDIR /BUILDABOT_PROJECT_NAME
+WORKDIR /Hexagrid-Master
 COPY . .
 RUN mkdir build && cd build && cmake .. && make
 
 FROM alpine:latest
 RUN apk --no-cache add libgcc libstdc++ libc6-compat
-WORKDIR /BUILDABOT_PROJECT_NAME
-COPY --from=build /BUILDABOT_PROJECT_NAME/build/BUILDABOT_PROJECT_NAME .
-CMD ["./BUILDABOT_PROJECT_NAME"]
+WORKDIR /Hexagrid-Master
+COPY --from=build /Hexagrid-Master/build/Hexagrid-Master .
+CMD ["./Hexagrid-Master"]
