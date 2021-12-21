@@ -21,7 +21,7 @@
 		"owner": "DiscordPP",
 		"name": "websocket-beast",
 		"include": "discordpp/websocket-beast.hh"
-	    },
+	    }
 	}
     },
     "REST": {
@@ -71,7 +71,12 @@
 		"owner": "DiscordPP",
 		"name": "plugin-responder",
 		"include": "discordpp/plugin-responder.hh"
-	    }
+	    },
+		"Responder": {
+			"owner": "DiscordPP",
+			"name": "plugin-interactionhandler",
+			"include": "discordpp/plugin-interactionhandler.hh"
+		}
 	}
     }
 }
