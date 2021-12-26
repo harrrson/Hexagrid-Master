@@ -15,11 +15,6 @@ int main() {
     dpp::log::filter = dpp::log::info;
     dpp::log::out = &std::cerr;
 
-    std::cout << "Howdy, and thanks for trying out Discord++!\n"
-              << "Feel free to drop into the official server at "
-                 "https://discord.gg/VHAyrvspCx if you have any questions.\n\n"
-              << std::flush;
-
     std::cout << "Starting bot...\n\n";
 
     std::string token = getToken();
@@ -47,7 +42,7 @@ int main() {
 
     // TODO Define your handlers here
 
-    auto rollExt=std::make_unique<DiceRoller>("roll",bot);
+    //auto rollExt=std::make_unique<DiceRoller>("roll",bot);
 
     // Create Asio context, this handles async stuff.
     auto aioc = std::make_shared<asio::io_context>();
