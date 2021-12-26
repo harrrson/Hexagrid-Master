@@ -13,13 +13,23 @@
 #include <fstream>
 #include <iostream>
 #include <regex>
+#include <optional>
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 
 // Put more non-plugin `include`s here
 
 #endif
 
+#include <discordpp/bot.hh>
+#include <discordpp/rest-simpleweb.hh>
+#include <discordpp/websocket-simpleweb.hh>
+#include <discordpp/plugin-interactionhandler.hh>
+#include <discordpp/plugin-objects.hh>
+#include <discordpp/plugin-endpoints.hh>
+#include <discordpp/plugin-overload.hh>
+#include <discordpp/plugin-ratelimit.hh>
+#include <discordpp/plugin-responder.hh>
 
 // Put more D++ plugin `include`s here
 

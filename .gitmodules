@@ -30,3 +30,6 @@
 	path = lib/plugin-interactionhandler
 	url = https://github.com/DiscordPP/plugin-interactionhandler.git
 	branch = master
+[submodule "lib/plugin-responder"]
+	path = lib/plugin-responder
+	url = https://github.com/DiscordPP/plugin-responder.git

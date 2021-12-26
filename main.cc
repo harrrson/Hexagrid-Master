@@ -1,6 +1,7 @@
 #include "include.hh"
+#include "extensions.h"
 
-namespace asio = boost::asio;
+//namespace asio = boost::asio;
 using json = nlohmann::json;
 namespace dpp = discordpp;
 
@@ -42,19 +43,11 @@ int main() {
     bot->debugUnhandled = false;
 
     // Declare the intent to receive guild messages
-    // You don't need `NONE` it's just to show you how to declare multiple
-    bot->intents = dpp::intents::NONE;
-
-    /*/
-     * Create handler for the READY payload, this may be handled by the bot in
-    the future.
-     * The `self` object contains all information about the 'bot' user.
-    /*/
-    json self;
-    bot->handlers.insert(
-        {"READY", [&self](json data) { self = data["user"]; }});
+    bot->intents = dpp::intents::GUILD_MESSAGES;
 
     // TODO Define your handlers here
+
+    auto rollExt=std::make_unique<DiceRoller>("roll",bot);
 
     // Create Asio context, this handles async stuff.
     auto aioc = std::make_shared<asio::io_context>();
