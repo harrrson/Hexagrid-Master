@@ -25,7 +25,6 @@
 #include <discordpp/rest-simpleweb.hh>
 #include <discordpp/websocket-simpleweb.hh>
 #include <discordpp/plugin-interactionhandler.hh>
-#include <discordpp/plugin-objects.hh>
 #include <discordpp/plugin-endpoints.hh>
 #include <discordpp/plugin-overload.hh>
 #include <discordpp/plugin-ratelimit.hh>

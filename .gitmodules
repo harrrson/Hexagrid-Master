@@ -17,11 +17,7 @@
 [submodule "plugin-endpoints"]
 	path = lib/plugin-endpoints
 	url = https://github.com/DiscordPP/plugin-endpoints.git
-	branch = master
-[submodule "plugin-objects"]
-	path = lib/plugin-objects
-	url = https://github.com/DiscordPP/plugin-objects.git
-	branch = master
+	branch = dev/native
 [submodule "plugin-overload"]
 	path = lib/plugin-overload
 	url = https://github.com/DiscordPP/plugin-overload.git
