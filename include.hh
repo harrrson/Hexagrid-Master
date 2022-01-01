@@ -30,7 +30,6 @@
 #include <discordpp/plugin-overload.hh>
 #include <discordpp/plugin-ratelimit.hh>
 #include <discordpp/plugin-responder.hh>
-#include <discordpp/plugin-commandhandler.hh>
 
 // Put more D++ plugin `include`s here
 

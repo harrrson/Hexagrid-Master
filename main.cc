@@ -1,9 +1,9 @@
 #include "include.hh"
-#include "extensions.h"
 
-//namespace asio = boost::asio;
+// namespace asio = boost::asio;
 using json = nlohmann::json;
 namespace dpp = discordpp;
+#include "extensions.h"
 
 std::string getToken();
 
@@ -34,15 +34,36 @@ int main() {
     // Create Bot object
     auto bot = std::make_shared<DppBot>();
 
+    // Set prefix
+    bot->prefix = "d!dc ";
+
     // Don't complain about unhandled events
     bot->debugUnhandled = false;
 
     // Declare the intent to receive guild messages
     bot->intents = dpp::intents::GUILD_MESSAGES;
 
-    // TODO Define your handlers here
+    // Map of all commands, used in help command
+    std::shared_ptr<commandMap> cmdMap = std::make_shared<commandMap>();
 
-    //auto rollExt=std::make_unique<DiceRoller>("roll",bot);
+    bot->handlers.insert({"READY",
+                          [cmdMap](json data) {
+                              for (auto &cmd : *cmdMap) {
+                                  cmd.second->createSlashCommands();
+                              }
+                          }});
+
+    {
+#define HELP_COMMAND_NAME "help"
+        std::unique_ptr<HelpCommand> helpCommand(
+            new HelpCommand(HELP_COMMAND_NAME, bot, cmdMap));
+        cmdMap->insert(commandPair(HELP_COMMAND_NAME, std::move(helpCommand)));
+
+#define ROLL_COMMAND_NAME "roll"
+        std::unique_ptr<DiceRoller> rollCommand(
+            new DiceRoller(ROLL_COMMAND_NAME, bot));
+        cmdMap->insert(commandPair(ROLL_COMMAND_NAME, std::move(rollCommand)));
+    }
 
     // Create Asio context, this handles async stuff.
     auto aioc = std::make_shared<asio::io_context>();

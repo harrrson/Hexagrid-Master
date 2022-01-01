@@ -12,12 +12,11 @@ add_subdirectory(lib/plugin-objects)
 add_subdirectory(lib/plugin-overload)
 add_subdirectory(lib/plugin-interactionhandler)
 add_subdirectory(lib/plugin-responder)
-add_subdirectory(lib/plugin-commandhandler)
 
 list(JOIN ALL_DISCORDPP_PLUGINS , ALL_DISCORDPP_PLUGINS_JOINED)
 add_compile_definitions(ALL_DISCORDPP_PLUGINS=${ALL_DISCORDPP_PLUGINS_JOINED})
 
-set(SOURCE_FILES main.cc extern.cc)
+set(SOURCE_FILES main.cc extern.cc commands/DiceRoller.cpp commands/HelpCommand.cpp commands/HelpCommand.h)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 target_precompile_headers(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include.hh)
 

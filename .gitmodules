@@ -33,6 +33,3 @@
 [submodule "lib/plugin-responder"]
 	path = lib/plugin-responder
 	url = https://github.com/DiscordPP/plugin-responder.git
-[submodule "lib/plugin-commandhandler"]
-	path = lib/plugin-commandhandler
-	url = https://github.com/harrrson/plugin-commandhandler.git
