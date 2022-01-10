@@ -16,16 +16,17 @@ class HelpCommand : public CommandBase {
   public:
     HelpCommand(std::string name, const std::shared_ptr<DppBot> &bot,
                 const std::shared_ptr<commandMap> &commands);
+
     void handler(dpp::Message &msg) override;
     void slashHandler(dpp::Interaction &msg) override;
+    void createSlashCommands(const dpp::User &user) override;
+    void registerSlashHandler(json res);
+
     std::string helpShort() override;
     void helpMain(dpp::Embed &embed) override;
+
     void generateMainHelp(dpp::Embed &embed);
     void generateCommandHelp(dpp::Embed &embed, const std::string &commandName);
-
-  private:
-  protected:
-    void createSlashCommands() override;
 
   private:
     std::shared_ptr<commandMap> mCommands;

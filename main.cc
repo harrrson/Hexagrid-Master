@@ -12,7 +12,7 @@ std::istream &safeGetline(std::istream &is, std::string &t);
 void filter(std::string &target, const std::string &pattern);
 
 int main() {
-    dpp::log::filter = dpp::log::info;
+    dpp::log::filter = dpp::log::info;//trace;
     dpp::log::out = &std::cerr;
 
     std::cout << "Starting bot...\n\n";
@@ -46,10 +46,12 @@ int main() {
     // Map of all commands, used in help command
     std::shared_ptr<commandMap> cmdMap = std::make_shared<commandMap>();
 
+    dpp::User self;
     bot->handlers.insert({"READY",
-                          [cmdMap](json data) {
+                          [&cmdMap,&self](dpp::Ready ready) {
+                              self = *ready.user;
                               for (auto &cmd : *cmdMap) {
-                                  cmd.second->createSlashCommands();
+                                  cmd.second->createSlashCommands(self);
                               }
                           }});
 

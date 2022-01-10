@@ -21,7 +21,7 @@ target_precompile_headers(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include.h
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 
-find_package(Boost 1.71.0 REQUIRED system date_time)
+#find_package(Boost 1.71.0 REQUIRED system date_time)
 find_package(Threads REQUIRED)
 find_package(OpenSSL REQUIRED)
 
